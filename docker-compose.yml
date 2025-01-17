@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+    db:
+        image: postgres
+        restart: always
+        environment:
+            - POSTGRES_USER=root
+            - POSTGRES_PASSWORD=Password1
+        ports:
+            - 5432:5432
+        volumes:
+            - C:\my-docker-vol\postgreSql:/var/lib/postgresql/data
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 8080:8080
